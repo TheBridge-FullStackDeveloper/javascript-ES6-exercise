@@ -25,23 +25,6 @@ function returnFirstTwoDrivers() {
 }
 ```
 
-3. Write arrow functions to refactor the following code.
-
-```js
-const person = {
-  name: "Bob",
-  greet: function () {
-    setTimeout(
-      function () {
-        console.log("Hello, my name is " + this.name);
-        console.log(this);
-      }.bind(this),
-      2000
-    );
-  },
-};
-```
-
 ## Exercise 2: Default parameters
 
 ### Instructions
