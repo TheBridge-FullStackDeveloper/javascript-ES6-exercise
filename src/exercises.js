@@ -55,14 +55,6 @@ function join(array1, array2) {
   return array1.concat(array2);
 }
 
-const expense = {
-  type: "Business",
-  amount: "$45 USD",
-};
-
-const type = expense.type;
-const amount = expense.amount;
-
 const savedFile = {
   extension: "jpg",
   name: "repost",

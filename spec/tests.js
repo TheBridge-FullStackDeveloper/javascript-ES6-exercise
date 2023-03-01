@@ -58,12 +58,6 @@ describe("join", function () {
   });
 });
 
-describe("expense", function () {
-  it("should use destructuring", function () {
-    expect(expense.toString().includes("{ type, amount }")).toBe(true);
-  });
-});
-
 describe("fileSummary", function () {
   it("should use template literals", function () {
     expect(fileSummary.toString().includes("`")).toBe(true);

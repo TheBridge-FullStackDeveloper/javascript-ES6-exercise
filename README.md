@@ -113,19 +113,7 @@ function join(array1, array2) {
 
 ### Instructions
 
-1. Refactor the following code to use object destructuring assignment.
-
-```js
-const expense = {
-  type: "Business",
-  amount: "$45 USD",
-};
-
-const type = expense.type;
-const amount = expense.amount;
-```
-
-2. Refactor the following code to use string template literals.
+1. Refactor the following code to use string template literals.
 
 ```js
 const savedFile = {
@@ -141,7 +129,7 @@ function fileSummary(file) {
 }
 ```
 
-3. Refactor the following code to use object destructuring assignment.
+2. Refactor the following code to use object destructuring assignment.
 
 ```js
 function addressMaker(address) {
