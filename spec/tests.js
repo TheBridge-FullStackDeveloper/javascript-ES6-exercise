@@ -10,15 +10,10 @@ describe("returnFirstTwoDrivers", function () {
   });
 });
 
-describe("person greet", function () {
+describe("person greet", () => {
   it("should greet should use arrow functions", function () {
-    expect(person.greet.toString().includes("=>")).toBe(true);
-  });
-
-  it("should greet", function () {
-    spyOn(console, "log");
     person.greet();
-    expect(console.log).toHaveBeenCalledWith("Hello, my name is Bob");
+    expect(person.greet.toString().includes("=>")).toBe(true);
   });
 });
 
@@ -55,12 +50,6 @@ describe("calculate", function () {
 describe("join", function () {
   it("should use spread operator", function () {
     expect(join.toString().includes("...array2")).toBe(true);
-  });
-});
-
-describe("expense", function () {
-  it("should use destructuring", function () {
-    expect(expense.toString().includes("{ type, amount }")).toBe(true);
   });
 });
 

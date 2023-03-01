@@ -64,6 +64,14 @@ function createGrid(array) {
 }
 ```
 
+solution
+
+```js
+function createGrid([width = 5, height = 5] = []) {
+  return `Generates a ${width} x ${height} grid`;
+}
+```
+
 ## Exercise 3: Rest and spread
 
 In this exercise, you will refactor some ES5 code into ES6.
@@ -81,6 +89,14 @@ function sum() {
 }
 ```
 
+solution
+
+```js
+function sum(...args) {
+  return args.reduce((a, b) => a + b, 0);
+}
+```
+
 2. Refactor the function `addNumbers()` to use the rest operator.
 
 ```js
@@ -88,6 +104,14 @@ function addNumbers(numbers) {
   return numbers.reduce(function (sum, number) {
     return sum + number;
   }, 0);
+}
+```
+
+solution
+
+```js
+function addNumbers(...numbers) {
+  return numbers.reduce((sum, number) => sum + number, 0);
 }
 ```
 
@@ -101,6 +125,14 @@ function calculate(product, ...numbers) {
 }
 ```
 
+solution
+
+```js
+function calculate(product, ...numbers) {
+  return numbers.map((number) => number * product);
+}
+```
+
 3. Refactor the function `join()` to use the spread operator.
 
 ```js
@@ -109,23 +141,20 @@ function join(array1, array2) {
 }
 ```
 
+solution
+
+```js
+function join(array1, array2) {
+  return [...array1, ...array2];
+}
+```
+
 ## Exercise 4: Destructuring
 
 ### Instructions
 
-1. Refactor the following code to use object destructuring assignment.
 
-```js
-const expense = {
-  type: "Business",
-  amount: "$45 USD",
-};
-
-const type = expense.type;
-const amount = expense.amount;
-```
-
-2. Refactor the following code to use string template literals.
+1. Refactor the following code to use string template literals.
 
 ```js
 const savedFile = {
@@ -141,13 +170,39 @@ function fileSummary(file) {
 }
 ```
 
-3. Refactor the following code to use object destructuring assignment.
+solution
+
+```js
+const savedFile = {
+  extension: "jpg",
+  name: "repost",
+  size: 14040,
+};
+
+function fileSummary({ name, extension, size }) {
+  return `The file ${name}.${extension} is of size ${size}`;
+}
+```
+
+2. Refactor the following code to use object destructuring assignment.
 
 ```js
 function addressMaker(address) {
   const newAddress = {
     city: address.city,
     state: address.state,
+    country: "United States",
+  };
+}
+```
+
+solution
+
+```js
+function addressMaker({ city, state }) {
+  const newAddress = {
+    city,
+    state,
     country: "United States",
   };
 }

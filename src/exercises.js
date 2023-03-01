@@ -1,67 +1,47 @@
-function filterNumbers(arr, largerThan) {
-  return arr.filter(function (number) {
-    return number > largerThan;
-  });
-}
+const filterNumbers = (array, largerThan) => {
+  return array.filter((number) => number > largerThan);
+};
 
-function returnFirstTwoDrivers() {
-  const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
-  return drivers.slice(0, 2);
-}
+const returnFirstTwoDrivers = (array) => {
+  return array.slice(0, 2);
+};
 
 const person = {
   name: "Bob",
   greet: function () {
-    setTimeout(
-      function () {
-        console.log("Hello, my name is " + this.name);
-        console.log(this);
-      }.bind(this),
-      2000
-    );
+    setTimeout(() => {
+      console.log("Hello, my name is " + this.name);
+      console.log("👆En el console log tiene que decir: Hello, my name is Bob");
+      console.log(this);
+    }, 2000);
   },
 };
 
-function add(a, b) {
-  a = a || 1;
-  b = b || 1;
+function add(a = 1, b = 1) {
+  a = a;
+  b = b;
   return a + b;
 }
 
-function createGrid(array) {
-  return `Generates a ${array[0]} x ${array[1]} grid`;
+function createGrid([width, height]) {
+  return `Generates a ${width} x ${height} grid`;
 }
 
-function sum() {
-  const argsArray = Array.prototype.slice.call(arguments);
-  return argsArray.reduce(function (a, b) {
-    return a + b;
-  }, 0);
+function sum(...args) {
+  return args.reduce((a, b) => a + b, 0);
 }
 
-function addNumbers(numbers) {
-  return numbers.reduce(function (sum, number) {
-    return sum + number;
-  }, 0);
+function addNumbers(...numbers) {
+  return numbers.reduce((sum, number) => sum + number, 0);
 }
 
-function calculate(product, numbers) {
-  return numbers.map(function (number) {
-    return number * product;
-  });
+function calculate(product, ...numbers) {
+  return numbers.map((number) => number * product);
 }
 
 function join(array1, array2) {
-  return array1.concat(array2);
+  return [...array1, ...array2];
 }
-
-const expense = {
-  type: "Business",
-  amount: "$45 USD",
-};
-
-const type = expense.type;
-const amount = expense.amount;
 
 const savedFile = {
   extension: "jpg",
@@ -69,19 +49,17 @@ const savedFile = {
   size: 14040,
 };
 
-function fileSummary(file) {
-  return (
-    "The file" + file.name + "." + file.extension + "is of size" + file.size
-  );
+function fileSummary({ name, extension, size }) {
+  return `The file ${name}.${extension} is of size ${size}`;
 }
 
 function addressMaker(address) {
-  // Add some code here
+  const { city, state, country } = address;
 
   const newAddress = {
-    city: address.city,
-    state: address.state,
-    country: "United States",
+    city,
+    state,
+    country,
   };
 
   return `${newAddress.city}, ${newAddress.state}, ${newAddress.country}`;
