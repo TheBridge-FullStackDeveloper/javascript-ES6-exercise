@@ -59,23 +59,14 @@ function add(a, b) {
 2. Refactor the function `subtract()` to use the default parameter syntax.
 
 ```js
-function createGrid([width = 5, height = 5] = []) {
-  return `Generates a ${width} x ${height} grid`;
+function createGrid(array) {
+  return `Generates a ${array[0]} x ${array[1]} grid`;
 }
 ```
 
 ## Exercise 3: Rest and spread
 
 In this exercise, you will refactor some ES5 code into ES6.
-
-```js
-function sum() {
-  const argsArray = Array.prototype.slice.call(arguments);
-  return argsArray.reduce(function (a, b) {
-    return a + b;
-  }, 0);
-}
-```
 
 ### Instructions
 
