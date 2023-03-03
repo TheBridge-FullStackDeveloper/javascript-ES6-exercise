@@ -39,7 +39,7 @@ function add(a, b) {
 }
 ```
 
-2. Refactor the function `subtract()` to use the default parameter syntax.
+2. Refactor the function `createGrid()` to use the destructuring.
 
 ```js
 function createGrid(array) {

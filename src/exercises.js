@@ -9,19 +9,6 @@ function returnFirstTwoDrivers() {
   return drivers.slice(0, 2);
 }
 
-const person = {
-  name: "Bob",
-  greet: function () {
-    setTimeout(
-      function () {
-        console.log("Hello, my name is " + this.name);
-        console.log(this);
-      }.bind(this),
-      2000
-    );
-  },
-};
-
 function add(a, b) {
   a = a || 1;
   b = b || 1;
