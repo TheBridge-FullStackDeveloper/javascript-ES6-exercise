@@ -43,7 +43,9 @@ function add(a, b) {
 
 ```js
 function createGrid(array) {
-  return `Generates a ${array[0]} x ${array[1]} grid`;
+  const width = array[0];
+  const height = array[1];
+  return `Generates a ${width} x ${height} grid`;
 }
 ```
 
