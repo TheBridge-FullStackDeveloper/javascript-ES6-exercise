@@ -14,15 +14,23 @@ function filterNumbers(arr, largerThan) {
     return number > largerThan;
   });
 }
+
+
+filterNumbers arr, largerThan => 
+  return arr.filter(function (number) {
+    return number > largerThan;
+  });
+
 ```
 
 2. Refactor the function `returnFirstTwoDrivers()` to use arrow function syntax.
 
 ```js
-function returnFirstTwoDrivers() {
+returnFirstTwoDrivers() => 
   const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
   return drivers.slice(0, 2);
-}
+
+
 ```
 
 ## Exercise 2: Default parameters
@@ -67,7 +75,7 @@ function sum() {
 2. Refactor the function `addNumbers()` to use the rest operator.
 
 ```js
-function addNumbers(numbers) {
+function addNumbers(...numbers) {
   return numbers.reduce(function (sum, number) {
     return sum + number;
   }, 0);

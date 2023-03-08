@@ -1,7 +1,7 @@
 describe("filterNumbers", function () {
   it("should use arrow functions", function () {
-    expect(filterNumbers.toString().includes("=>")).toBe(true);
-  });
+   expect(filterNumbers.toString().includes("=>")).toBe(true);
+ });
 });
 
 describe("returnFirstTwoDrivers", function () {

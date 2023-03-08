@@ -1,57 +1,62 @@
-function filterNumbers(arr, largerThan) {
-  return arr.filter(function (number) {
+filterNumbers =(arr, largerThan) => 
+   arr.filter(function (number) {
     return number > largerThan;
   });
-}
 
-function returnFirstTwoDrivers() {
-  const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
+
+ const returnFirstTwoDrivers = () => { 
+  const drivers = ["Sally", "Bob", "Freddy", "Claudia"];{
   return drivers.slice(0, 2);
-}
+}}
 
-const person = {
-  name: "Bob",
-  greet: function () {
-    setTimeout(
-      function () {
-        console.log("Hello, my name is " + this.name);
-        console.log(this);
-      }.bind(this),
-      2000
-    );
-  },
-};
+//const person = {
+  //name: "Bob",
+  //greet: function () {
+    //setTimeout(
+      //function () {
+        //console.log("Hello, my name is " + this.name);
+        //console.log(this);
+      //}.bind(this),
+      //2000
+    //);
+  //},
+//};
 
-function add(a, b) {
-  a = a || 1;
-  b = b || 1;
+
+  function add (a = 1, b = 1) {
   return a + b;
-}
+  }
 
-function createGrid(array) {
-  return `Generates a ${array[0]} x ${array[1]} grid`;
-}
 
-function sum() {
+
+  
+  function createGrid([width, height]) {
+    return `Generates a ${width} x ${height} grid`;
+  }
+  
+
+
+
+const sum= () => {
   const argsArray = Array.prototype.slice.call(arguments);
-  return argsArray.reduce(function (a, b) {
-    return a + b;
-  }, 0);
+  return argsArray.reduce((a, b) => a + b, 0);
 }
 
-function addNumbers(numbers) {
+
+
+function addNumbers(...numbers) {
   return numbers.reduce(function (sum, number) {
     return sum + number;
   }, 0);
 }
 
-function calculate(product, numbers) {
+function calculate(product, ...numbers) { 
   return numbers.map(function (number) {
     return number * product;
   });
 }
 
-function join(array1, array2) {
+function join(array1, ...array2) { 
   return array1.concat(array2);
 }
 
@@ -61,11 +66,9 @@ const savedFile = {
   size: 14040,
 };
 
-function fileSummary(file) {
-  return (
-    "The file" + file.name + "." + file.extension + "is of size" + file.size
-  );
-}
+const {name,extension,size} =savedFile
+  
+//--------------------------------------------------------
 
 function addressMaker(address) {
   // Add some code here
