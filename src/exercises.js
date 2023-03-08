@@ -1,13 +1,21 @@
-function filterNumbers(arr, largerThan) {
-  return arr.filter(function (number) {
-    return number > largerThan;
+let filterNumbers = (arr, largerThan) =>
+  arr.filter(function (number) {
+    number > largerThan;
   });
-}
 
-function returnFirstTwoDrivers() {
+// Me lo pongo aparte para comparar con la función original
+
+//
+
+//function returnFirstTwoDrivers() {
+//  const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
+//  return drivers.slice(0, 2);
+//}
+
+const returnFirstTwoDrivers = () => {
   const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
   return drivers.slice(0, 2);
-}
+};
 
 const person = {
   name: "Bob",
@@ -22,38 +30,51 @@ const person = {
   },
 };
 
-function add(a, b) {
+// function add(a, b) {
+// a = a || 1;
+// b = b || 1;
+// return a + b;
+//}
+
+const add = (a, b) => {
   a = a || 1;
   b = b || 1;
   return a + b;
-}
+};
 
-function createGrid(array) {
-  return `Generates a ${array[0]} x ${array[1]} grid`;
-}
+//function createGrid(array) {
+// return `Generates a ${array[0]} x ${array[1]} grid`;
+//}
 
-function sum() {
+const createGrid = (array) => `Generates a ${array[o]} x ${array[1]} grid`;
+
+//function sum() {
+// const argsArray = Array.prototype.slice.call(arguments);
+// return argsArray.reduce(function (a, b) {
+//  return a + b;
+// }, 0);
+//}
+
+const sum = () => {
   const argsArray = Array.prototype.slice.call(arguments);
   return argsArray.reduce(function (a, b) {
     return a + b;
   }, 0);
-}
+};
 
-function addNumbers(numbers) {
-  return numbers.reduce(function (sum, number) {
+const addNumbers = (numbers) =>
+  numbers.reduce(function (sum, number) {
     return sum + number;
   }, 0);
-}
 
-function calculate(product, numbers) {
-  return numbers.map(function (number) {
-    return number * product;
-  });
-}
+const calculate = (product, numbers) =>
+  numbers.map((number) => number * product);
 
-function join(array1, array2) {
-  return array1.concat(array2);
-}
+//function join(array1, array2) {
+//  return array1.concat(array2);
+//}
+
+const join = (array1, array2) => array1.concat(array2);
 
 const savedFile = {
   extension: "jpg",
