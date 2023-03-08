@@ -26,9 +26,9 @@ const person = {
   greet: () =>{
     setTimeout(
       function () {
-        console.log("Hello, my name is " + this.name);
-        console.log(this);
-      }.bind(person),
+        console.log("Hello, my name is " + person.name);
+        console.log(person);
+      }.bind(person),2000
     );
  return "Hello, my name is"+ this.name
  },
