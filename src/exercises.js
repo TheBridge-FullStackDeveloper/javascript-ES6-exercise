@@ -1,15 +1,25 @@
-function filterNumbers(arr, largerThan) {
+/*function filterNumbers(arr, largerThan) {
   return arr.filter(function (number) {
     return number > largerThan;
   });
-}
+}*/
 
-function returnFirstTwoDrivers() {
+const filterNumbers = (arr, largerThan) => {
+  return arr.filter((number) => number > largerThan);
+};
+
+
+/*function returnFirstTwoDrivers() {
   const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
   return drivers.slice(0, 2);
-}
+}*/
+const returnFirstTwoDrivers = () => {
+  const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
+  return drivers.slice(0, 2);
+};
 
-const person = {
+
+/*const person = {
   name: "Bob",
   greet: function () {
     setTimeout(
@@ -20,41 +30,78 @@ const person = {
       2000
     );
   },
-};
+};*/
 
-function add(a, b) {
+const person = {
+  name: "Bob",
+  greet: function (){
+    setTimeout(() => {
+      console.log('Hello, my nmae is ${this.name}');
+      console.log(this);
+    }, 2000);
+  },
+};
+/*function add(a, b) {
   a = a || 1;
   b = b || 1;
   return a + b;
-}
+}*/
+const add = (a = 1, b = 1) => {
+  return a + b;
+};
 
-function createGrid(array) {
+
+/*function createGrid(array) {
   return `Generates a ${array[0]} x ${array[1]} grid`;
-}
+}*/
+const createGrid = (array = [10, 10]) => {
+  return `Generates a ${array[0]} x ${array[1]} grid`;
+};
 
-function sum() {
+/*function sum() {
   const argsArray = Array.prototype.slice.call(arguments);
   return argsArray.reduce(function (a, b) {
     return a + b;
   }, 0);
-}
+}*/
+const sum = function() {
+    return Array.prototype.reduce.call(arguments, function (a,b){
+      return a + b;
+    }, 0);
+  };
 
-function addNumbers(numbers) {
+/*function addNumbers(numbers) {
   return numbers.reduce(function (sum, number) {
     return sum + number;
   }, 0);
-}
+}*/
+const addNumbers = (...numbers) => {
+  return numbers.reduce(function (sum, number) {
+    return sum + number;
+  }, 0);
+};
 
-function calculate(product, numbers) {
+
+/*function calculate(product, numbers) {
   return numbers.map(function (number) {
     return number * product;
   });
-}
+}*/
+const calculate = (product, ...numbers) => {
+  return numbers.map(function (number) {
+    return number * product;
+  });
+};
 
+/*
 function join(array1, array2) {
   return array1.concat(array2);
-}
+}*/
+const join = (array1, array2) => {
+  return [...array1, ...array2];
+};
 
+/*
 const savedFile = {
   extension: "jpg",
   name: "repost",
@@ -65,8 +112,18 @@ function fileSummary(file) {
   return (
     "The file" + file.name + "." + file.extension + "is of size" + file.size
   );
+}*/
+const savedFile = {
+  extension: "jpg",
+  name: "repost",
+  size: 14040,
+};
+
+function fileSummary(file) {
+  return `The file ${file.name}.${file.extension} is of size ${file.size}.`;
 }
 
+/*
 function addressMaker(address) {
   // Add some code here
 
@@ -78,7 +135,18 @@ function addressMaker(address) {
 
   return `${newAddress.city}, ${newAddress.state}, ${newAddress.country}`;
 }
+*/
+function addressMaker(address) {
+  const { city, state } = address;
+  const newAddress = {
+    city: city,
+    state: state,
+    country: "United States",
+  };
 
+  return `${newAddress.city}, ${newAddress.state}, ${newAddress.country}`;
+}
+/*
 function Ninja(options) {
   this.name = options.name;
   this.health = 100;
@@ -106,4 +174,27 @@ Ninja.prototype.showStats = function () {
 Ninja.prototype.drinkSake = function () {
   this.health += 10;
   console.log("Health: " + this.health);
-};
+};*/
+class Ninja {
+  constructor(options) {
+    this.name = options.name;
+    this.health = 100;
+    this.speed = 3;
+    this.strength = 3;
+  }
+
+  sayName() {
+    console.log(`My ninja name is ${this.name}`);
+  }
+
+  showStats() {
+    console.log(
+      `Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}`
+    );
+  }
+
+  drinkSake() {
+    this.health += 10;
+    console.log(`Health: ${this.health}`);
+  }
+}
