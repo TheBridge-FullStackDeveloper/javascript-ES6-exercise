@@ -26,10 +26,12 @@ const person = {
   greet: () =>{
     setTimeout(
       function () {
-       return "Hello, my name is " + this.name);
+        console.log("Hello, my name is " + this.name);
+        console.log(this);
       }.bind(person),
     );
-  },
+ return "Hello, my name is"+ this.name
+ },
 };
 
 function add(a = 1, b = 1) {
@@ -37,8 +39,10 @@ function add(a = 1, b = 1) {
 }
 
 function createGrid(array) {
-  const [x,y] = array
-  return `Generates a (${(x)}) x ${(y)} grid`;
+  const [x,y, ...resto] = array
+  /*return `Generates a (${[x]}) x (${[y]}) grid`;*/
+  return "Generates a " + array[x] + " x" + array[y] + " grid"
+ 
 }
 console.log(array)
 
