@@ -1,36 +1,46 @@
-function filterNumbers(arr, largerThan) {
+/*function filterNumbers(arr, largerThan) {
   return arr.filter(function (number) {
     return number > largerThan;
   });
+}*/
+
+const filterNumbers = (arr,largerThan)=> {
+  return arr.filter((number)=>{
+    return number > largerThan
+  })
 }
 
-function returnFirstTwoDrivers() {
+
+/*function returnFirstTwoDrivlargerThaners() {
+  const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
+  return drivers.slice(0, 2);
+}*/
+
+const returnFirstTwoDrivers = ()=> {
   const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
   return drivers.slice(0, 2);
 }
 
 const person = {
   name: "Bob",
-  greet: function () {
+  greet: () =>{
     setTimeout(
       function () {
-        console.log("Hello, my name is " + this.name);
-        console.log(this);
-      }.bind(this),
-      2000
+       return "Hello, my name is " + this.name);
+      }.bind(person),
     );
   },
 };
 
-function add(a, b) {
-  a = a || 1;
-  b = b || 1;
+function add(a = 1, b = 1) {
   return a + b;
 }
 
 function createGrid(array) {
-  return `Generates a ${array[0]} x ${array[1]} grid`;
+  const [x,y] = array
+  return `Generates a (${(x)}) x ${(y)} grid`;
 }
+console.log(array)
 
 function sum() {
   const argsArray = Array.prototype.slice.call(arguments);
