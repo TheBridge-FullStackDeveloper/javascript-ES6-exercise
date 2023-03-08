@@ -1,57 +1,62 @@
-function filterNumbers(arr, largerThan) {
+/*function filterNumbers(arr, largerThan) {
   return arr.filter(function (number) {
     return number > largerThan;
   });
-}
+}*/
+const filterNumbers = (arr, largerThan) => arr.filter((number) => number > largerThan);
 
-function returnFirstTwoDrivers() {
+
+/*function returnFirstTwoDrivers() {
+  const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
+  return drivers.slice(0, 2);
+}*/
+const returnFirstTwoDrivers = () => {
   const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
   return drivers.slice(0, 2);
 }
-
 const person = {
   name: "Bob",
-  greet: function () {
+  greet: () => {
     setTimeout(
       function () {
         console.log("Hello, my name is " + this.name);
         console.log(this);
-      }.bind(this),
+      }.bind(greet),
       2000
     );
   },
 };
 
-function add(a, b) {
-  a = a || 1;
-  b = b || 1;
+function add(a = 1, b = 1) {
+
   return a + b;
 }
 
 function createGrid(array) {
+  const [width, height] = array
   return `Generates a ${array[0]} x ${array[1]} grid`;
 }
 
 function sum() {
-  const argsArray = Array.prototype.slice.call(arguments);
+  const argsArray = [...args];
   return argsArray.reduce(function (a, b) {
     return a + b;
   }, 0);
 }
 
-function addNumbers(numbers) {
+function addNumbers(...numbers) {
   return numbers.reduce(function (sum, number) {
     return sum + number;
   }, 0);
 }
 
-function calculate(product, numbers) {
+function calculate(product, ...numbers) {
   return numbers.map(function (number) {
     return number * product;
   });
 }
 
-function join(array1, array2) {
+function join(array1, ...array2) {
   return array1.concat(array2);
 }
 
@@ -62,13 +67,12 @@ const savedFile = {
 };
 
 function fileSummary(file) {
-  return (
-    "The file" + file.name + "." + file.extension + "is of size" + file.size
+  return (`"The file" ${file.name}"."${file.extension}"is of size"${file.size}`
   );
 }
 
 function addressMaker(address) {
-  // Add some code here
+  const { city, state } = address;
 
   const newAddress = {
     city: address.city,
@@ -76,34 +80,34 @@ function addressMaker(address) {
     country: "United States",
   };
 
-  return `${newAddress.city}, ${newAddress.state}, ${newAddress.country}`;
+  return address;
 }
 
-function Ninja(options) {
-  this.name = options.name;
-  this.health = 100;
-  this.speed = 3;
-  this.strength = 3;
-}
-
-Ninja.prototype.sayName = function () {
+class Ninja{
+  constructor (options){
+    this.name = options.name;
+    this.health = 100;
+    this.speed = 3;
+    this.strength = 3;
+  }
+sayName (options){
   console.log("My ninja name is " + this.name);
-};
-
-Ninja.prototype.showStats = function () {
+}
+showStats (options){
   console.log(
     "Name: " +
-      this.name +
-      ", Health: " +
-      this.health +
-      ", Speed: " +
-      this.speed +
-      ", Strength: " +
-      this.strength
+    this.name +
+    ", Health: " +
+    this.health +
+    ", Speed: " +
+    this.speed +
+    ", Strength: " +
+    this.strength
   );
-};
-
-Ninja.prototype.drinkSake = function () {
+}
+drinkSake (options){
   this.health += 10;
   console.log("Health: " + this.health);
-};
+}
+}
+

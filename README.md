@@ -15,6 +15,7 @@ function filterNumbers(arr, largerThan) {
   });
 }
 ```
+const filterNumber=(arr, largerThan)=> arr.filter(function (number)=>number > largerThan);
 
 2. Refactor the function `returnFirstTwoDrivers()` to use arrow function syntax.
 
@@ -42,7 +43,8 @@ function add(a, b) {
 2. Refactor the function `subtract()` to use the default parameter syntax.
 
 ```js
-function createGrid(array) {
+const [position1, position2]=array
+function createGrid(position1,position1) {
   return `Generates a ${array[0]} x ${array[1]} grid`;
 }
 ```
