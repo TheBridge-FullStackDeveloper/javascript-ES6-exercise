@@ -54,10 +54,12 @@ const add = (a = 1, b = 1) => {
 /*function createGrid(array) {
   return `Generates a ${array[0]} x ${array[1]} grid`;
 }*/
-const createGrid = (array = [10, 10]) => {
-  return `Generates a ${array[0]} x ${array[1]} grid`;
-};
 
+function createGrid(array) {
+  const [x,y, ...resto] = array
+  /*return `Generates a (${[x]}) x (${[y]}) grid`;*/
+  return "Generates a " + array[x] + " x" + array[y] + " grid"
+}
 /*function sum() {
   const argsArray = Array.prototype.slice.call(arguments);
   return argsArray.reduce(function (a, b) {
