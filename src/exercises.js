@@ -35,8 +35,7 @@ const person = {
       }.bind(this),
       2000
     );
-    const hi = greet();
-    return console.log( hi );
+
   },
 };
 
@@ -56,16 +55,30 @@ const person = {
 //   },
 // };
 
-
-function add(a, b) {
+// Handmade
+function add(a = 1, b = 1) {
   a = a || 1;
   b = b || 1;
   return a + b;
 }
 
-function createGrid(array) {
+//Original
+// function add(a, b) {
+//   a = a || 1;
+//   b = b || 1;
+//   return a + b;
+// }
+
+//Handmade
+const createGrid = (array = [10,1]) => {
   return `Generates a ${array[0]} x ${array[1]} grid`;
 }
+
+
+// Original
+// function createGrid(array) {
+//   return `Generates a ${array[0]} x ${array[1]} grid`;
+// }
 
 function sum() {
   const argsArray = Array.prototype.slice.call(arguments);
