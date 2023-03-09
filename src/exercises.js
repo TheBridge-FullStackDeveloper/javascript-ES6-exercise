@@ -28,16 +28,19 @@ const returnFirstTwoDrivers = () => {
 // Handmade
 const person = {
   name: "Bob",
-  greet:  () => {
+  greet: () => {
     setTimeout(
-      () => {
-        console.log("Hello, my name is " + this.name);
-        console.log(this);
-      },
+      function () {
+        console.log("Hello, my name is " + person.name)
+      }.bind(this),
       2000
     );
+    const hi = greet();
+    return console.log( hi );
   },
 };
+
+
 
 // Original
 // const person = {
@@ -52,6 +55,7 @@ const person = {
 //     );
 //   },
 // };
+
 
 function add(a, b) {
   a = a || 1;
