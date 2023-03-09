@@ -1,44 +1,45 @@
-function filterNumbers(arr, largerThan) {
-  return arr.filter(function (number) {
-    return number > largerThan;
-  });
-}
+const filterNumbers = (arr, largerThan) => arr.filter((number) =>
+  number > largerThan);
 
-function returnFirstTwoDrivers() {
-  const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
-  return drivers.slice(0, 2);
-}
 
-function add(a, b) {
-  a = a || 1;
-  b = b || 1;
-  return a + b;
-}
+const returnFirstTwoDrivers = (drivers = ["Sally", "Bob", "Freddy", "Claudia"]) =>
+  
+   drivers.slice(0, 2);
 
-function createGrid(array) {
-  return `Generates a ${array[0]} x ${array[1]} grid`;
-}
+   function add (a = 1, b = 1) {
+    return a + b;
+   }
+        
+    
+    function createGrid(array) {
+      const array = [1 , 2]
+      
+      return `Generates a ${first} x ${second} grid`;
+    }
+
 
 function sum() {
   const argsArray = Array.prototype.slice.call(arguments);
-  return argsArray.reduce(function (a, b) {
-    return a + b;
+  return argsArray.reduce(function (a, b, ...arg) {
+
+    return (a + b + arg);
   }, 0);
 }
 
-function addNumbers(numbers) {
+function addNumbers(...numbers) {
   return numbers.reduce(function (sum, number) {
     return sum + number;
   }, 0);
 }
 
-function calculate(product, numbers) {
+function calculate(product, ...numbers) {
   return numbers.map(function (number) {
     return number * product;
   });
 }
 
 function join(array1, array2) {
+
   return array1.concat(array2);
 }
 
@@ -49,19 +50,23 @@ const savedFile = {
 };
 
 function fileSummary(file) {
-  return (
-    "The file" + file.name + "." + file.extension + "is of size" + file.size
-  );
+  return `The file ${file.name} + ${file.extension} + is of size + ${file.size}`
+    
+  ;
 }
 
 function addressMaker(address) {
   // Add some code here
+
+  const {city, state, country} = newAddress
 
   const newAddress = {
     city: address.city,
     state: address.state,
     country: "United States",
   };
+
+
 
   return `${newAddress.city}, ${newAddress.state}, ${newAddress.country}`;
 }
