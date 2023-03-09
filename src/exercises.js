@@ -1,13 +1,26 @@
-function filterNumbers(arr, largerThan) {
+
+const filterNumbers = (arr, largerThan) => {
   return arr.filter(function (number) {
     return number > largerThan;
   });
 }
 
-function returnFirstTwoDrivers() {
+// function filterNumbers(arr, largerThan) {
+//   return arr.filter(function (number) {
+//     return number > largerThan;
+//   });
+// }
+
+const returnFirstTwoDrivers = () => {
   const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
   return drivers.slice(0, 2);
 }
+
+
+// function returnFirstTwoDrivers() {
+//   const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
+//   return drivers.slice(0, 2);
+// }
 
 const person = {
   name: "Bob",
