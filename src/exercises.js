@@ -1,30 +1,71 @@
-function filterNumbers(arr, largerThan) {
-  return arr.filter(function (number) {
+/*function filterNumbers(arr, largerThan) {
+  return arr.filter((number)  {
     return number > largerThan;
   });
+  
+} */
+function filterNumbers(arr, largerThan) {
+  return arr.filter((number)  {
+    return number > largerThan;
+  });
+  
 }
 
-function returnFirstTwoDrivers() {
+const filterNumbers = (arr, largerThan) => {
+  return arr.filter = ((number))=> {
+    return number > largerThan;
+  };
+}
+
+
+
+/*function returnFirstTwoDrivers() {
   const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
   return drivers.slice(0, 2);
-}
+ */
 
-function add(a, b) {
+  const returnFirstTwoDrivers = ( ) => {
+    const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
+    return drivers.slice (0,2);
+  }
+
+
+/*
+ add(a, b)  {
   a = a || 1;
   b = b || 1;
   return a + b;
-}
+} */
 
+ const add = (a = 1, b = 1 ) =>
+ console.log ("add");
+ 
+
+
+/*
 function createGrid(array) {
   return `Generates a ${array[0]} x ${array[1]} grid`;
-}
+}*/
 
+let a, x;
+[a, x,] = createGrid();
+console.log (a);
+console.log (b);
+
+/*
 function sum() {
   const argsArray = Array.prototype.slice.call(arguments);
   return argsArray.reduce(function (a, b) {
     return a + b;
   }, 0);
+}*/
+function sum( ) {
+  
+  return Array.prototype.slice.call(arguments, 0);
+
+ 
 }
+
 
 function addNumbers(numbers) {
   return numbers.reduce(function (sum, number) {
