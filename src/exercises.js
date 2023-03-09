@@ -1,39 +1,57 @@
-
+// Handmade xD
 const filterNumbers = (arr, largerThan) => {
   return arr.filter(function (number) {
     return number > largerThan;
   });
 }
 
+// Original
 // function filterNumbers(arr, largerThan) {
 //   return arr.filter(function (number) {
 //     return number > largerThan;
 //   });
 // }
 
+
+// Handmade
 const returnFirstTwoDrivers = () => {
   const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
   return drivers.slice(0, 2);
 }
 
-
+// Original
 // function returnFirstTwoDrivers() {
 //   const drivers = ["Sally", "Bob", "Freddy", "Claudia"];
 //   return drivers.slice(0, 2);
 // }
 
+// Handmade
 const person = {
   name: "Bob",
-  greet: function () {
+  greet:  () => {
     setTimeout(
-      function () {
+      () => {
         console.log("Hello, my name is " + this.name);
         console.log(this);
-      }.bind(this),
+      },
       2000
     );
   },
 };
+
+// Original
+// const person = {
+//   name: "Bob",
+//   greet: function () {
+//     setTimeout(
+//       function () {
+//         console.log("Hello, my name is " + this.name);
+//         console.log(this);
+//       }.bind(this),
+//       2000
+//     );
+//   },
+// };
 
 function add(a, b) {
   a = a || 1;
