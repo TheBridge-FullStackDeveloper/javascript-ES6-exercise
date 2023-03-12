@@ -70,9 +70,7 @@ function add(a = 1, b = 1) {
 // }
 
 //Handmade
-const createGrid = (array = [10,1]) => {
-  return `Generates a ${array[0]} x ${array[1]} grid`;
-}
+const createGrid = (array) =>  `Generates a ${array[0]} x ${array[1]} grid`;
 
 
 // Original
