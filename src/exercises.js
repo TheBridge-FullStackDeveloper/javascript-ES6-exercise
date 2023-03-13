@@ -78,12 +78,20 @@ const createGrid = (array) =>  `Generates a ${array[0]} x ${array[1]} grid`;
 //   return `Generates a ${array[0]} x ${array[1]} grid`;
 // }
 
-function sum() {
+// Refactorized
+const sum = () => {
   const argsArray = Array.prototype.slice.call(arguments);
   return argsArray.reduce(function (a, b) {
     return a + b;
   }, 0);
 }
+
+// function sum() {
+//   const argsArray = Array.prototype.slice.call(arguments);
+//   return argsArray.reduce(function (a, b) {
+//     return a + b;
+//   }, 0);
+// }
 
 function addNumbers(numbers) {
   return numbers.reduce(function (sum, number) {
