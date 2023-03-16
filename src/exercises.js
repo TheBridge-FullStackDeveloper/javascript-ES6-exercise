@@ -70,7 +70,7 @@ function add(a = 1, b = 1) {
 // }
 
 //Handmade
-const createGrid = (array) =>  `Generates a ${array[0]} x ${array[1]} grid`;
+const createGrid = (array=[0,1]) =>  `Generates a ${array[0]} x ${array[1]} grid`;
 
 
 // Original
@@ -93,21 +93,45 @@ const sum = () => {
 //   }, 0);
 // }
 
-function addNumbers(numbers) {
+// Refactorized
+const addNumbers = (numbers) => {
   return numbers.reduce(function (sum, number) {
     return sum + number;
   }, 0);
 }
 
-function calculate(product, numbers) {
+//Original 
+// function addNumbers(numbers) {
+//   return numbers.reduce(function (sum, number) {
+//     return sum + number;
+//   }, 0);
+// }
+
+
+// Refactorized
+const calculate = (product, numbers) => {
   return numbers.map(function (number) {
     return number * product;
   });
 }
 
-function join(array1, array2) {
+//Original
+// function calculate(product, numbers) {
+//   return numbers.map(function (number) {
+//     return number * product;
+//   });
+// }
+
+
+// Refactorized
+const join = (array1, array2) => {
   return array1.concat(array2);
 }
+
+// Original
+// function join(array1, array2) {
+//   return array1.concat(array2);
+// }
 
 const savedFile = {
   extension: "jpg",
@@ -115,13 +139,22 @@ const savedFile = {
   size: 14040,
 };
 
-function fileSummary(file) {
+// Refactorized
+const fileSummary = (file) => {
   return (
     "The file" + file.name + "." + file.extension + "is of size" + file.size
   );
 }
 
-function addressMaker(address) {
+// Original
+// function fileSummary(file) {
+//   return (
+//     "The file" + file.name + "." + file.extension + "is of size" + file.size
+//   );
+// }
+
+// Refactorized
+const addressMaker = (address) => {
   // Add some code here
 
   const newAddress = {
@@ -133,7 +166,21 @@ function addressMaker(address) {
   return `${newAddress.city}, ${newAddress.state}, ${newAddress.country}`;
 }
 
-function Ninja(options) {
+
+// Original
+// function addressMaker(address) {
+//   // Add some code here
+
+//   const newAddress = {
+//     city: address.city,
+//     state: address.state,
+//     country: "United States",
+//   };
+
+//   return `${newAddress.city}, ${newAddress.state}, ${newAddress.country}`;
+// }
+
+const Ninja = (options) => {
   this.name = options.name;
   this.health = 100;
   this.speed = 3;
